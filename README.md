@@ -45,7 +45,7 @@ each script).
 | `Count_matrix.xlsx` | Gene × sample raw count matrix (30,492 genes × 12 samples), first column `Geneid`. Produced from raw reads by STAR alignment + featureCounts (see Methods). |
 | `experimental_design_temp.csv` | Sample metadata: `sample`, `strain` (SH/OTIK), `temperature` (T20/T26). Provided in `code/`. |
 
-Raw sequence reads are deposited at NCBI/GEO under accession **[ADD ACCESSION]**;
+Raw sequence reads are deposited at NCBI/GEO under accession **PRJNA1519432**;
 the count matrix is provided as supplementary data with the article. The
 read-processing pipeline (Trimmomatic → STAR → featureCounts) was run separately
 on an HPC cluster and is described in the Methods; this repository begins from
