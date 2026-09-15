@@ -64,7 +64,7 @@ repository begins from the count matrix.
 
 | Script | What it does |
 |--------|---------------|
-| `01_core_transcriptome.R` | Core and pan transcriptome by presence/absence (edgeR CPM ≥ 1 in all 3 replicates); bar chart, 4-way Venn, UpSet. |
+| `01_core_transcriptome.R` | Core and pan transcriptome by presence/absence, using CPM (edgeR cpm() function only) ≥ 1 in all 3 replicates; bar chart, 4-way Venn, UpSet. |
 | `02_deseq2_master.R` | Builds the DESeq2 objects and all contrasts, saves `DEA_results.RData`; PCA and top-50 variable-gene heatmap. **Run this first** — the other scripts load its output. |
 | `03_strain_comparison.R` | OTI-vs-SH at each temperature (per-temperature subsets); Venn; log2FC(26 °C)-vs-log2FC(20 °C) scatter. |
 | `04_strain_directional_categories.R` | Splits strain DEGs into eight direction-resolved categories (constitutive / heat-specific / cool-specific / direction-flip, per strain); bar plot, UpSet, annotated quadrant scatter. Produces the strain-difference gene lists. |
@@ -78,10 +78,7 @@ repository begins from the count matrix.
   - Strain contrasts: positive log2FC = higher in OTI.
   - Thermal contrasts: positive log2FC = up at 26 °C.
 
-**Two normalisations, two purposes.** Presence/absence (script 01) uses
-**edgeR CPM**; all differential expression (scripts 02–05) uses **DESeq2
-median-of-ratios** normalisation. These answer different questions and are
-not interchangeable.
+**Two normalisations, two purposes:** Presence/absence (script 01) uses CPM, computed with edgeR's cpm() function only — edgeR's differential-expression machinery is not used. All differential expression (scripts 02–05) is performed with DESeq2 (median-of-ratios normalisation). The two methods answer different questions and are not interchangeable.
 
 **Within-strain thermal contrasts** are computed on **per-strain subsets**
 (each `~ temperature`) rather than from an interaction term on the full
