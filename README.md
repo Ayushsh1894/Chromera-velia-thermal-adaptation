@@ -6,8 +6,6 @@ Archived version: Zenodo, doi: 10.5281/zenodo.XXXXXXX.
 
 Two strains of *Chromera velia*, **SH** (Sydney Harbour, temperate, reference strain CCMP2878) and **OTI** (One Tree Island, tropical, southern Great Barrier Reef), were grown at **20 °C** and **26 °C**, three biological replicates per condition (12 RNA-seq libraries in total). The analysis compares the two strains at each temperature (strain difference), each strain's response to temperature (thermal response), and the core/pan transcriptome. Lipidomic profiles were measured for the same strains and temperatures.
 
-> **A note on strain naming.** The manuscript and this repository use **OTI** throughout. A small number of legacy filenames inherited from the original CryptoDB exports may still read **OTIK** (e.g. `Sh_down_OTIK_up`). These refer to the same strain.
-
 ---
 
 ## Repository layout
@@ -41,10 +39,10 @@ R (≥ 4.2) with Bioconductor. Scripts are numbered in dependency order; run fro
 
 | File | Description |
 |------|-------------|
-| `Count_matrix.xlsx` | Gene × sample raw count matrix (30,492 genes × 12 samples), first column `Geneid`. Produced from raw reads by STAR alignment + featureCounts (see Methods). |
-| `experimental_design_temp.csv` | Sample metadata: `sample`, `strain` (SH/OTI), `temperature` (T20/T26). |
+| `codes/Count_matrix.xlsx` | Gene × sample raw count matrix (30,492 genes × 12 samples), first column `Geneid`. Produced from raw reads by STAR alignment + featureCounts (see Methods). |
+| `codes/experimental_design_temp.csv` | Sample metadata: `sample`, `strain` (SH/OTI), `temperature` (T20/T26). |
 
-Raw sequence reads are deposited at NCBI under BioProject accession **PRJNA1519432**. The count matrix is provided as supplementary data with the article. The read-processing pipeline (Trimmomatic → STAR → featureCounts) was run separately on an HPC cluster and is described in the Methods; this repository begins from the count matrix.
+Raw sequence reads are deposited at NCBI under BioProject accession **PRJNA1519432**. The count matrix is also included in `codes/` and as supplementary data with the article. The read-processing pipeline (Trimmomatic → STAR → featureCounts) was run separately on an HPC cluster and is described in the Methods; this repository begins from the count matrix.
 
 ### Scripts
 
@@ -107,7 +105,7 @@ Gene lists exported by the scripts were submitted to [CryptoDB](https://cryptodb
 - `OTI/OTI_unique_up`, `OTI/OTI_unique_down`: genes OTI uniquely up- or down-regulates at 26 °C
 - `SH/SH_unique_up`, `SH/SH_unique_down`: genes SH uniquely up- or down-regulates at 26 °C
 - `Concordant/Concordant_up`, `Concordant/Concordant_down`: up or down at 26 °C in both strains
-- `Concordant/Sh_down_OTIK_up`, `Concordant/SH_up_OTI_down`: discordant (opposite direction between strains)
+- `Concordant/Sh_down_OTI_up`, `Concordant/SH_up_OTI_down`: discordant (opposite direction between strains)
 - `Thermal_response_gene_ids/`: gene ID lists only
 
 ---
