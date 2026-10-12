@@ -2,7 +2,7 @@
 
 Analysis code and processed data for Sharma *et al.*, *"Transcriptomic and lipidomic profiles reveal higher thermal adaptability in a tropical versus a temperate isolate of Chromera velia"*.
 
-Archived version: Zenodo, doi: 10.5281/zenodo.XXXXXXX.
+Archived version: Zenodo, doi: 10.5281/zenodo.23320742.
 
 Two strains of *Chromera velia*, **SH** (Sydney Harbour, temperate, reference strain CCMP2878) and **OTI** (One Tree Island, tropical, southern Great Barrier Reef), were grown at **20 °C** and **26 °C**, three biological replicates per condition (12 RNA-seq libraries in total). The analysis compares the two strains at each temperature (strain difference), each strain's response to temperature (thermal response), and the core/pan transcriptome. Lipidomic profiles were measured for the same strains and temperatures.
 
